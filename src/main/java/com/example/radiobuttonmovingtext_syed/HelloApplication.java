@@ -64,7 +64,7 @@ public class HelloApplication extends Application {
             button.setLayoutX(100 * i + 50);
             button.setLayoutY(25);
             button.setToggleGroup(group);
-            int finalI = i;
+            final int finalI = i;
             button.setOnAction(e ->{
                 text.setFill(colorObjects.get(finalI));
             });
@@ -79,6 +79,19 @@ public class HelloApplication extends Application {
 
         //id right
         Button bb = new Button("=>");
+
+        pain.getChildren().addAll(b, bb);
+        b.setLayoutY(350);
+        b.setLayoutX(150);
+        bb.setLayoutX(350);
+        bb.setLayoutY(350);
+
+        b.setOnAction(e ->{
+            text.setX(text.getX() - 10);
+        });
+        bb.setOnAction(e ->{
+            text.setX(text.getX() + 10);
+        });
 
 
     }
